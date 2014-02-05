@@ -18,6 +18,10 @@
 
 COMMON_FOLDER := device/motorola/omap4-common
 
+# Boot animation (HACK 540.zip crashes PVR currently)
+TARGET_SCREEN_HEIGHT := 720
+TARGET_SCREEN_WIDTH := 480
+
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
     $(COMMON_FOLDER)/prebuilt/bin/pdsbackup.sh:system/bin/pdsbackup.sh \
@@ -130,6 +134,7 @@ PRODUCT_PACKAGES += \
 # Permissions files
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
@@ -201,6 +206,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240 \
     windowsmgr.max_events_per_sec=90 \
     com.ti.omap_enhancement=true \
+    ro.bq.gpu_to_cpu_unsupported=1 \
     hwui.render_dirty_regions=false \
     persist.sys.root_access=3 \
     ro.product.use_charge_counter=1 \
