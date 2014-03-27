@@ -45,13 +45,18 @@ PRODUCT_PACKAGES += \
 # Hardware HALs
 PRODUCT_PACKAGES += \
     audio.usb.default \
-    audio.a2dp.default
+    audio.a2dp.default \
+    audio.hdmi.omap4
 
 PRODUCT_PACKAGES += \
     audio_policy.omap4 \
     libasound \
     libaudioutils \
-    libaudiohw_legacy
+    libaudiohw_legacy \
+    tinyplay \
+    tinycap \
+    tinymix \
+    tinypcminfo
 
 # BlueZ test tools
 PRODUCT_PACKAGES += \
@@ -209,6 +214,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     com.ti.omap_enhancement=true \
     ro.bq.gpu_to_cpu_unsupported=1 \
     hwui.render_dirty_regions=false \
+    persist.demo.hdmirotationlock=true \
     persist.sys.root_access=3 \
     ro.product.use_charge_counter=1 \
     persist.sys.usb.config=mtp,adb \
@@ -234,7 +240,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.media.capture.flashIntensity=100 \
     ro.media.capture.classification=classF \
     ro.media.panorama.defres=3264x1840 \
-    ro.media.panorama.frameres=1280x720
+    ro.media.panorama.frameres=1280x720 \
+    media.stagefright.cache-params=18432/20480/15
 
 # OpenglES
 PRODUCT_PROPERTY_OVERRIDES += \
