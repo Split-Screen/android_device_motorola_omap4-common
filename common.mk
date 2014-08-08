@@ -219,7 +219,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bq.gpu_to_cpu_unsupported=1 \
     hwui.render_dirty_regions=false \
     persist.demo.hdmirotationlock=true \
-    persist.sys.root_access=3 \
+    persist.sys.root_access=1 \
     ro.product.use_charge_counter=1 \
     persist.sys.usb.config=mtp,adb \
     ro.setupwizard.enable_bypass=1
@@ -245,7 +245,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.media.capture.classification=classF \
     ro.media.panorama.defres=3264x1840 \
     ro.media.panorama.frameres=1280x720 \
-    media.stagefright.cache-params=18432/20480/15
+    media.stagefright.cache-params=18432/20480/15 \
+    media.aac_51_output_enabled=true
 
 # OpenglES
 PRODUCT_PROPERTY_OVERRIDES += \
