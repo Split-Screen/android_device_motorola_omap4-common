@@ -43,6 +43,9 @@ OMAP_ENHANCEMENT := true
 #BLTSVILLE_ENHANCEMENT :=true
 BOARD_USE_TI_ENHANCED_DOMX := true
 
+# QCOM SELinux policy
+include device/qcom/sepolicy/sepolicy.mk
+
 # inherit from the proprietary version
 -include vendor/motorola/omap4-common/BoardConfigVendor.mk
 
@@ -243,18 +246,29 @@ BOARD_SEPOLICY_DIRS += \
     device/motorola/omap4-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+    akmd8975.te \
+    battd.te \
     bluetooth.te \
     debuggered.te \
+    drmserver.te \
     file_contexts \
     device.te \
     dhcp.te \
     domain.te \
     file.te \
+    init.te \
     init_shell.te \
     mediaserver.te \
+    modemlog.te \
     netd.te \
+    property.te \
     pvrsrvinit.te \
     rild.te \
+    smc.te \
     system.te \
     tee.te \
-    vold.te
+    thermal_manager.te \
+    uim.te \
+    vold.te \
+    whisperd.te \
+    wrigleyd.te
