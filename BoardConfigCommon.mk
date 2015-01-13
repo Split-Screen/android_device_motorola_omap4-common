@@ -260,6 +260,7 @@ BOARD_SEPOLICY_UNION += \
     init_shell.te \
     mediaserver.te \
     modemlog.te \
+    msp430.te \
     netd.te \
     property.te \
     pvrsrvinit.te \
