@@ -18,8 +18,9 @@
 
 COMMON_FOLDER := device/motorola/omap4-common
 
-TARGET_SCREEN_HEIGHT := 960
-TARGET_SCREEN_WIDTH := 540
+# Boot animation (HACK 540.zip crashes PVR currently)
+TARGET_SCREEN_HEIGHT := 720
+TARGET_SCREEN_WIDTH := 480
 
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
@@ -233,7 +234,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.demo.hdmirotationlock=true \
     persist.sys.root_access=1 \
     ro.product.use_charge_counter=1 \
-    persist.sys.usb.config=mtp,adb \
+    persist.sys.usb.config=mtp \
     ro.setupwizard.enable_bypass=1
 
 # Media
